@@ -1,0 +1,186 @@
+
+
+
+
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bytexl Backend Project</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #121212;
+        color: #ffffff;
+        overflow-x: hidden;
+      }
+      .maindiv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+        animation: fadeInBackground 2s ease-in-out;
+      }
+      .container {
+        width: 90%;
+        max-width: 800px;
+        padding: 20px;
+        background: linear-gradient(135deg, #333333, #1a1a1a);
+        border-radius: 15px;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        transform: scale(0.9);
+        animation: popIn 0.8s ease forwards;
+      }
+      .container:hover {
+        transform: scale(1.02);
+      }
+      .header {
+        background: linear-gradient(90deg, #ff7eb3, #ff758c);
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        box-shadow: 0px 5px 10px rgba(255, 117, 140, 0.5);
+        animation: fadeInDown 1.2s ease-in-out;
+      }
+      .header h1 {
+        margin: 0;
+        font-size: 2.2em;
+        animation: textGlow 2s infinite alternate;
+      }
+      .upperdiv {
+        padding: 20px;
+        background: rgba(255, 153, 0, 0.9);
+        border-radius: 10px;
+        margin-bottom: 20px;
+        color: #fff;
+        animation: fadeInLeft 1s ease-in-out;
+      }
+      .upperdiv h1 {
+        margin: 10px 0;
+        font-size: 1.8em;
+        animation: textGrow 1s ease forwards;
+      }
+      .upperdiv p {
+        font-size: 1.1em;
+        margin-top: 5px;
+      }
+      .button {
+        display: inline-block;
+        padding: 12px 20px;
+        margin: 10px 0;
+        font-size: 1em;
+        color: #ffffff;
+        background-color: #ff758c;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        animation: buttonSlideIn 1.3s ease forwards;
+      }
+      .button:hover {
+        background-color: #ff4a6d;
+      }
+      .lowerdiv {
+        padding: 15px;
+        background: rgba(0, 204, 153, 0.9);
+        border-radius: 10px;
+        animation: fadeInUp 1.2s ease-in-out;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      ul li {
+        margin: 10px 0;
+        font-size: 1.1em;
+        color: #222;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 15px;
+        border-radius: 8px;
+        opacity: 0;
+        animation: slideUp 0.5s ease forwards;
+      }
+      ul li:nth-child(1) {
+        animation-delay: 0.3s;
+      }
+      ul li:nth-child(2) {
+        animation-delay: 0.6s;
+      }
+      ul li:nth-child(3) {
+        animation-delay: 0.9s;
+      }
+      ul li:hover {
+        background: #ffdbdb;
+        transform: scale(1.05);
+        transition: background 0.3s, transform 0.2s;
+      }
+      ul li b {
+        color: #333;
+      }
+      /* Animations */
+      @keyframes fadeInBackground {
+        from { background-color: #000; }
+        to { background-color: #121212; }
+      }
+      @keyframes fadeInDown {
+        from { opacity: 0; transform: translateY(-50px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes fadeInLeft {
+        from { opacity: 0; transform: translateX(-50px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(50px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes slideUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes popIn {
+        from { transform: scale(0.9); }
+        to { transform: scale(1); }
+      }
+      @keyframes buttonSlideIn {
+        from { transform: translateY(20px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+      }
+      @keyframes textGlow {
+        0% { text-shadow: 0 0 5px #ff758c, 0 0 10px #ff758c, 0 0 15px #ff758c; }
+        100% { text-shadow: 0 0 10px #ff758c, 0 0 20px #ff758c, 0 0 25px #ff758c; }
+      }
+      @keyframes textGrow {
+        from { transform: scale(0.9); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="maindiv">
+      <div class="container">
+        <div class="header">
+          <h1>Welcome to Bytexl Backend Project</h1>
+        </div>
+        <div class="upperdiv">
+          <h1>Discover Subscriber Data</h1>
+          <p>Effortlessly explore and retrieve information about your YouTube subscribers. Start by using the routes below to access subscriber details in our database.</p>
+          <button class="button">Get Started</button>
+        </div>
+        <div class="lowerdiv">
+          <ul>
+            <li>GET <b>/subscribers</b>: Retrieve all subscriber details in one place.</li>
+            <li>GET <b>/subscribers/names</b>: View subscriber names and channels in one glance.</li>
+            <li>GET <b>/subscribers/:id</b>: Access specific subscriber information with ease.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
